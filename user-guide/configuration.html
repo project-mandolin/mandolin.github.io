@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+
+    <title>Mandolin</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mandolin" />
+    <meta name="keywords" content="machine learning, distributed" />
+
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- 
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/docs.css" rel="stylesheet">
+    -->
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+  </head>
+  
+  <div id="container">
+  <div id="header"> 
+    <h1 id="logo-text">Mandolin</h1>
+  </div>
+  <div id="site-content">
+  <div id="col-left">    
+  <p id="top">
+     <p>Mandolin provides various ways to provide configuraiton properties that specifiy system
+     behavior. Primarily this is done using a configuration &#39;&#39;file&#39;&#39;.</p>
+     <table>
+       <tbody>
+         <tr>
+           <td><strong>Property Name</strong></td>
+           <td><strong>Meaning</strong></td>
+         </tr>
+         <tr>
+           <td><code>mandolin.partitions</code></td>
+           <td>Number of partitions/nodes to use for online
+           distributed optimization.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.name</code></td>
+           <td>Provide the name of the application.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.driver</code></td>
+           <td>Driver class for application. Usually set to
+           <code>org.mitre.mandolin.dnn.Classifier</code>. This is the
+           method that is invoked upon startup.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.without-spark</code></td>
+           <td>Set to <code>true</code> for <code>false</code>. <code>true</code> disables
+           Spark and uses a different backend for use on a
+           single machine.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.data</code></td>
+           <td>Specify a root directory for data to be used by
+           the application.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.detail-file</code></td>
+           <td>File to log training progress; used instead of
+           progress-file when a test-file is not provided.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.dense-vector-size</code></td>
+           <td>An <code>integer</code> that denotes the number of
+           dimensions in the inputs.  This is generally used
+           only when the inputs are dense.  If set to 0 or
+           left unset the input reader will create a symbol
+           table mapping feature names to integers.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.ensure-sparse</code></td>
+           <td>If set to <code>true</code>, this will force Mandolin to
+           try to use a sparse vector representation when
+           reducing model weights or gradients (with batch
+           training)</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.model-file</code></td>
+           <td>String path specifying where the trained model
+           should be written to. The model is represented as
+           Kryo serialized objects including the model
+           weights and any auxiliary information
+           (e.g. feature alphabet) required to use the model
+           for inference on new data.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.num-epochs</code></td>
+           <td>Number of training epochs. No default - this must
+           be set by the application.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.num-subepochs</code></td>
+           <td>Number passes over data on each partition during
+           each map-reduce epoch. Default: 1</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.max-features-mi</code></td>
+           <td><code>Integer</code> specifying the number of features to
+           select independently using Mutual Information
+           prior to training.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.progress-file</code></td>
+           <td>File path where output showing training progress
+           measured by training loss as well as accuracy,
+           area under the ROC curve and other metrics against
+           the test data provided by
+           <code>mandolin.trainer.test-file</code></td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.test-file</code></td>
+           <td>A development test file to use for evaluation
+           during/after the training process.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.train-file</code></td>
+           <td>Training file in the standard Mandolin
+           classification input format.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.eval-freq</code></td>
+           <td>Frequency of training progress evaluation which is
+           rendered to the output specified by
+           <code>mandolin.trainer.progress-file</code></td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.test-partitions</code></td>
+           <td>Specifies the number of data partitions for the
+           <em>test</em> data specified by
+           <code>mandolin.trainer.test-file</code>. This should
+           usually be set to 3-4 times the number of total
+           cores on the compute cluster as typical for Spark
+           jobs.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.oversample</code></td>
+           <td>This is a <code>Double</code> that is a coefficient
+           determining how much data should be (re)sampled
+           from the entire dataset for each partition/node
+           during online training. If this is non-positive,
+           the dataset is not resampled and 1/k of the data
+           (where k is the number of compute nodes) is
+           sharded to each compute node. If set to a positive
+           value, a, then a/k of the data is sampled for each
+           data partition <strong>on each epoch</strong>.  See user guide
+           for more details.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.print-feature-file</code></td>
+           <td>A file path that will receive a list of all the
+           features used/selected for training with a given
+           input file.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.trainer.scale-inputs</code></td>
+           <td>Scale inputs so that they have a range in
+           <code>[0,1]</code></td>
+         </tr>
+         <tr>
+           <td><code>mandolin.threads</code></td>
+           <td>Numberof threads to use for asynchronous gradient
+           updates on each node; should generally match the
+           number of cores available on each compute node.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.synchronous</code></td>
+           <td>Default <code>false</code>. Uses asynchronous stochastic
+           gradient updates; requires that gradient
+           computation is thread safe. If gradient
+           computation is not thread safe (reentrant) then
+           this should be set to <code>true</code></td>
+         </tr>
+         <tr>
+           <td><code>mandolin.skip-probability</code></td>
+           <td>Default <code>0.0</code>. Specify a probability of skipping
+           a training instance during online updating. Can be
+           used for fast undersampling and injection of
+           randomness into estimation without a need to
+           reshuffle data across teh cluster.</td>
+         </tr>
+         <tr>
+           <td><code>mandolin.mini-batch-size</code></td>
+           <td>Number of data points/examples within which to
+           compute local gradients. Default <code>1</code></td>
+         </tr>
+         <tr>
+           <td>
+           </td>
+           <td>
+           </td>
+         </tr>
+       </tbody>
+     </table>      
+  </p>
+  </div>
+
+  <div id="col-right">
+    <!-- <div style="padding: 30px 10px 10px;">  -->
+      <ul>
+       <div class="toc">
+         <ul>
+           <li>
+             <p class="toc level1">Overview</p>
+             <ul>
+               <li><a class="toc level2" href="../overview/intro.html">Introduction</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Users Guide</p>
+             <ul>
+               <li><a class="toc level2" href="installation.html">Installation</a></li>
+               <li><a class="toc level2" href="quick-start.html">Quickstart</a></li>
+               <li><a class="toc level2" href="formats.html">Formats</a></li>
+               <li><span class="toc level2 active">Configuration</span></li>
+               <li><a class="toc level2" href="mandolin-glp.html">Generalized Layered Perceptron</a></li>
+               <li><a class="toc level2" href="specification.html">Model Specification</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Quick-start Without Spark</p>
+             <ul>
+               <li><a class="toc level2" href="../without-spark-quickstart/linear-classifier.html">Linear Classifier</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Developer Docs</p>
+             <ul>
+               <li><a class="toc level2" href="../api-docs/api.html">API Docs</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Runtime Decoder</p>
+             <ul>
+               <li><a class="toc level2" href="../runtime-decoder/runtime-decoder.html">Runtime Decoder</a></li>
+             </ul>
+           </li>
+         </ul>
+       </div>
+      </ul>
+    </div>
+  </div>
+
+
+
+  </div>
+
+
+</body></html>

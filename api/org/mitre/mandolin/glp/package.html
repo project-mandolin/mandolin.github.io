@@ -1,0 +1,1200 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>glp - org.mitre.mandolin.glp</title>
+          <meta name="description" content="glp - org.mitre.mandolin.glp" />
+          <meta name="keywords" content="glp org.mitre.mandolin.glp" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.mitre.mandolin.glp.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.mitre">mitre</a>.<a href="../package.html" class="extype" name="org.mitre.mandolin">mandolin</a></p>
+        <h1>glp</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">glp</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><h4> Deep and Linear Learning </h4><p>Package provides classes for Deep Neural Networks. Networks without
+any hidden layers correspond to linear models. Model inputs can be
+sparse or dense with appropriate optimizations and datastructures
+for each. Various SGD optimization routines are available such
+as plain SGD, SGD with momentum, Nesterov accelerated SGD, AdaGrad,
+RMSProp and AdaDelta. Regularization including L1 and L2 regularization,
+MaxNorm regularization and Dropout Regularization are available.
+Network configurations are specified within application configuration
+files.  See the User Guide for more details.</p><p>The package includes a
+variety of loss functions available for all model types (linear and
+non-linear/deep models) including hinge, log (i.e. SoftMax with cross-entropy) and modified
+Huber loss as well as non-convex loss functions such as the ramp loss
+and the T-logistic loss. These loss functions are geared towards categorical
+classification (all loss functions work with non-binary, categorical dependent
+variables) rather than regression, currently.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.mitre.mandolin.glp"><span>glp</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.mitre.mandolin.glp.ANNetwork" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ANNetworkextendsSerializable"></a>
+      <a id="ANNetwork:ANNetwork"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ANNetwork.html"><span class="name">ANNetwork</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Represents a feed-forward MLP represented as a sequence of Layer</p>
+    </li><li name="org.mitre.mandolin.glp.AbstractWeightLayer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AbstractWeightLayerextendsNonInputLayerwithSerializable"></a>
+      <a id="AbstractWeightLayer:AbstractWeightLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AbstractWeightLayer.html"><span class="name">AbstractWeightLayer</span></a><span class="result"> extends <a href="NonInputLayer.html" class="extype" name="org.mitre.mandolin.glp.NonInputLayer">NonInputLayer</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.AdaGradSpec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AdaGradSpecextendsUpdaterSpecwithProductwithSerializable"></a>
+      <a id="AdaGradSpec:AdaGradSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AdaGradSpec.html"><span class="name">AdaGradSpec</span></a><span class="params">(<span name="learnRate">learnRate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.1</span></span>)</span><span class="result"> extends <a href="UpdaterSpec.html" class="extype" name="org.mitre.mandolin.glp.UpdaterSpec">UpdaterSpec</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.BasicGLPSgdUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BasicGLPSgdUpdaterextendsUpdater[org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient,org.mitre.mandolin.glp.BasicGLPSgdUpdater]"></a>
+      <a id="BasicGLPSgdUpdater:BasicGLPSgdUpdater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BasicGLPSgdUpdater.html"><span class="name">BasicGLPSgdUpdater</span></a><span class="result"> extends <a href="../optimize/Updater.html" class="extype" name="org.mitre.mandolin.optimize.Updater">Updater</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>, <a href="BasicGLPSgdUpdater.html" class="extype" name="org.mitre.mandolin.glp.BasicGLPSgdUpdater">BasicGLPSgdUpdater</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.ComposeStrategy" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ComposeStrategyextendsAnyRef"></a>
+      <a id="ComposeStrategy:ComposeStrategy"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ComposeStrategy.html"><span class="name">ComposeStrategy</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.DataFrames" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DataFramesextendsAnyRef"></a>
+      <a id="DataFrames:DataFrames"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DataFrames.html"><span class="name">DataFrames</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Utilities for mapping GLP factors to Spark DataFrames</p>
+    </li><li name="org.mitre.mandolin.glp.DenseInputLayer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DenseInputLayerextendsInputLayer"></a>
+      <a id="DenseInputLayer:DenseInputLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DenseInputLayer.html"><span class="name">DenseInputLayer</span></a><span class="result"> extends <a href="InputLayer.html" class="extype" name="org.mitre.mandolin.glp.InputLayer">InputLayer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.DenseReader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DenseReaderextendsSerializable"></a>
+      <a id="DenseReader:DenseReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DenseReader.html"><span class="name">DenseReader</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Reads simple, dense feature vector representations from file</p>
+    </li><li name="org.mitre.mandolin.glp.DistributedProcessor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DistributedProcessorextendsProcessor"></a>
+      <a id="DistributedProcessor:DistributedProcessor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DistributedProcessor.html"><span class="name">DistributedProcessor</span></a><span class="result"> extends <a href="Processor.html" class="extype" name="org.mitre.mandolin.glp.Processor">Processor</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.GLPAdaDeltaUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPAdaDeltaUpdaterextendsUpdater[org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient,org.mitre.mandolin.glp.GLPAdaDeltaUpdater]withRegularizer"></a>
+      <a id="GLPAdaDeltaUpdater:GLPAdaDeltaUpdater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPAdaDeltaUpdater.html"><span class="name">GLPAdaDeltaUpdater</span></a><span class="result"> extends <a href="../optimize/Updater.html" class="extype" name="org.mitre.mandolin.optimize.Updater">Updater</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>, <a href="GLPAdaDeltaUpdater.html" class="extype" name="org.mitre.mandolin.glp.GLPAdaDeltaUpdater">GLPAdaDeltaUpdater</a>] with <a href="Regularizer.html" class="extype" name="org.mitre.mandolin.glp.Regularizer">Regularizer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPAdaGradUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPAdaGradUpdaterextendsUpdater[org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient,org.mitre.mandolin.glp.GLPAdaGradUpdater]withRegularizer"></a>
+      <a id="GLPAdaGradUpdater:GLPAdaGradUpdater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPAdaGradUpdater.html"><span class="name">GLPAdaGradUpdater</span></a><span class="result"> extends <a href="../optimize/Updater.html" class="extype" name="org.mitre.mandolin.optimize.Updater">Updater</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>, <a href="GLPAdaGradUpdater.html" class="extype" name="org.mitre.mandolin.glp.GLPAdaGradUpdater">GLPAdaGradUpdater</a>] with <a href="Regularizer.html" class="extype" name="org.mitre.mandolin.glp.Regularizer">Regularizer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPAdamUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPAdamUpdaterextendsUpdater[org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient,org.mitre.mandolin.glp.GLPAdamUpdater]withRegularizer"></a>
+      <a id="GLPAdamUpdater:GLPAdamUpdater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPAdamUpdater.html"><span class="name">GLPAdamUpdater</span></a><span class="result"> extends <a href="../optimize/Updater.html" class="extype" name="org.mitre.mandolin.optimize.Updater">Updater</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>, <a href="GLPAdamUpdater.html" class="extype" name="org.mitre.mandolin.glp.GLPAdamUpdater">GLPAdamUpdater</a>] with <a href="Regularizer.html" class="extype" name="org.mitre.mandolin.glp.Regularizer">Regularizer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPComponentSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPComponentSetextendsProductwithSerializable"></a>
+      <a id="GLPComponentSet:GLPComponentSet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPComponentSet.html"><span class="name">GLPComponentSet</span></a><span class="params">(<span name="evaluator">evaluator: <a href="GLPInstanceEvaluator.html" class="extype" name="org.mitre.mandolin.glp.GLPInstanceEvaluator">GLPInstanceEvaluator</a></span>, <span name="predictor">predictor: <a href="GLPPredictor.html" class="extype" name="org.mitre.mandolin.glp.GLPPredictor">GLPPredictor</a></span>, <span name="outputConstructor">outputConstructor: <a href="GLPPosteriorOutputConstructor.html" class="extype" name="org.mitre.mandolin.glp.GLPPosteriorOutputConstructor">GLPPosteriorOutputConstructor</a></span>, <span name="featureExtractor">featureExtractor: <a href="../transform/FeatureExtractor.html" class="extype" name="org.mitre.mandolin.transform.FeatureExtractor">FeatureExtractor</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>]</span>, <span name="labelAlphabet">labelAlphabet: <a href="../util/Alphabet.html" class="extype" name="org.mitre.mandolin.util.Alphabet">Alphabet</a></span>, <span name="dim">dim: <span class="extype" name="scala.Int">Int</span></span>, <span name="npts">npts: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPFactor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GLPFactorextendsSerializable"></a>
+      <a id="GLPFactor:GLPFactor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPFactor.html"><span class="name">GLPFactor</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPInstanceEvaluator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPInstanceEvaluatorextendsTrainingUnitEvaluator[org.mitre.mandolin.glp.GLPFactor,org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient]withSerializable"></a>
+      <a id="GLPInstanceEvaluator:GLPInstanceEvaluator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPInstanceEvaluator.html"><span class="name">GLPInstanceEvaluator</span></a><span class="result"> extends <a href="../optimize/TrainingUnitEvaluator.html" class="extype" name="org.mitre.mandolin.optimize.TrainingUnitEvaluator">TrainingUnitEvaluator</a>[<a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>, <a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.GLPLayout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPLayoutextendsSerializable"></a>
+      <a id="GLPLayout:GLPLayout"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPLayout.html"><span class="name">GLPLayout</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Holds the data structures used to represent weights and gradients for GLP
+models.</p>
+    </li><li name="org.mitre.mandolin.glp.GLPLossGradient" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPLossGradientextendsLossGradient[org.mitre.mandolin.glp.GLPLossGradient]"></a>
+      <a id="GLPLossGradient:GLPLossGradient"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPLossGradient.html"><span class="name">GLPLossGradient</span></a><span class="result"> extends <a href="../optimize/LossGradient.html" class="extype" name="org.mitre.mandolin.optimize.LossGradient">LossGradient</a>[<a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPModelReader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPModelReaderextendsAnyRef"></a>
+      <a id="GLPModelReader:GLPModelReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPModelReader.html"><span class="name">GLPModelReader</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPModelSettings" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPModelSettingsextendsLearnerSettingswithOnlineLearnerSettingswithBatchLearnerSettingswithDecoderSettingswithDeepNetSettings"></a>
+      <a id="GLPModelSettings:GLPModelSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPModelSettings.html"><span class="name">GLPModelSettings</span></a><span class="result"> extends <a href="../config/LearnerSettings.html" class="extype" name="org.mitre.mandolin.config.LearnerSettings">LearnerSettings</a> with <a href="../config/OnlineLearnerSettings.html" class="extype" name="org.mitre.mandolin.config.OnlineLearnerSettings">OnlineLearnerSettings</a> with <a href="../config/BatchLearnerSettings.html" class="extype" name="org.mitre.mandolin.config.BatchLearnerSettings">BatchLearnerSettings</a> with <a href="../config/DecoderSettings.html" class="extype" name="org.mitre.mandolin.config.DecoderSettings">DecoderSettings</a> with <a href="../config/DeepNetSettings.html" class="extype" name="org.mitre.mandolin.config.DeepNetSettings">DeepNetSettings</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPModelSpec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPModelSpecextendsSerializablewithProduct"></a>
+      <a id="GLPModelSpec:GLPModelSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPModelSpec.html"><span class="name">GLPModelSpec</span></a><span class="params">(<span name="wts">wts: <a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a></span>, <span name="evaluator">evaluator: <a href="GLPInstanceEvaluator.html" class="extype" name="org.mitre.mandolin.glp.GLPInstanceEvaluator">GLPInstanceEvaluator</a></span>, <span name="la">la: <a href="../util/Alphabet.html" class="extype" name="org.mitre.mandolin.util.Alphabet">Alphabet</a></span>, <span name="fe">fe: <a href="../transform/FeatureExtractor.html" class="extype" name="org.mitre.mandolin.transform.FeatureExtractor">FeatureExtractor</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>]</span>)</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPModelWriter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPModelWriterextendsAnyRef"></a>
+      <a id="GLPModelWriter:GLPModelWriter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPModelWriter.html"><span class="name">GLPModelWriter</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.GLPPosteriorOutputConstructor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPPosteriorOutputConstructorextendsOutputConstructor[String,Seq[(Double,Int)],String]"></a>
+      <a id="GLPPosteriorOutputConstructor:GLPPosteriorOutputConstructor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPPosteriorOutputConstructor.html"><span class="name">GLPPosteriorOutputConstructor</span></a><span class="result"> extends <a href="../predict/OutputConstructor.html" class="extype" name="org.mitre.mandolin.predict.OutputConstructor">OutputConstructor</a>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Seq">Seq</span>[(<span class="extype" name="scala.Double">Double</span>, <span class="extype" name="scala.Int">Int</span>)], <span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Output constructor for GLP models.</p>
+    </li><li name="org.mitre.mandolin.glp.GLPPredictor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPPredictorextendsEvalPredictor[org.mitre.mandolin.glp.GLPFactor,org.mitre.mandolin.glp.GLPWeights,Int,org.mitre.mandolin.predict.DiscreteConfusion]withSerializable"></a>
+      <a id="GLPPredictor:GLPPredictor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPPredictor.html"><span class="name">GLPPredictor</span></a><span class="result"> extends <a href="../predict/EvalPredictor.html" class="extype" name="org.mitre.mandolin.predict.EvalPredictor">EvalPredictor</a>[<a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>, <a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <span class="extype" name="scala.Int">Int</span>, <a href="../predict/DiscreteConfusion.html" class="extype" name="org.mitre.mandolin.predict.DiscreteConfusion">DiscreteConfusion</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPRMSPropUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPRMSPropUpdaterextendsUpdater[org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient,org.mitre.mandolin.glp.GLPRMSPropUpdater]withRegularizer"></a>
+      <a id="GLPRMSPropUpdater:GLPRMSPropUpdater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPRMSPropUpdater.html"><span class="name">GLPRMSPropUpdater</span></a><span class="result"> extends <a href="../optimize/Updater.html" class="extype" name="org.mitre.mandolin.optimize.Updater">Updater</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>, <a href="GLPRMSPropUpdater.html" class="extype" name="org.mitre.mandolin.glp.GLPRMSPropUpdater">GLPRMSPropUpdater</a>] with <a href="Regularizer.html" class="extype" name="org.mitre.mandolin.glp.Regularizer">Regularizer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPSettings" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPSettingsextendsLearnerSettingswithOnlineLearnerSettings"></a>
+      <a id="GLPSettings:GLPSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPSettings.html"><span class="name">GLPSettings</span></a><span class="result"> extends <a href="../config/LearnerSettings.html" class="extype" name="org.mitre.mandolin.config.LearnerSettings">LearnerSettings</a> with <a href="../config/OnlineLearnerSettings.html" class="extype" name="org.mitre.mandolin.config.OnlineLearnerSettings">OnlineLearnerSettings</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPSgdUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPSgdUpdaterextendsUpdater[org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient,org.mitre.mandolin.glp.GLPSgdUpdater]withRegularizer"></a>
+      <a id="GLPSgdUpdater:GLPSgdUpdater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPSgdUpdater.html"><span class="name">GLPSgdUpdater</span></a><span class="result"> extends <a href="../optimize/Updater.html" class="extype" name="org.mitre.mandolin.optimize.Updater">Updater</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>, <a href="GLPSgdUpdater.html" class="extype" name="org.mitre.mandolin.glp.GLPSgdUpdater">GLPSgdUpdater</a>] with <a href="Regularizer.html" class="extype" name="org.mitre.mandolin.glp.Regularizer">Regularizer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GLPWeights" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPWeightsextendsWeights[org.mitre.mandolin.glp.GLPWeights]withSerializable"></a>
+      <a id="GLPWeights:GLPWeights"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPWeights.html"><span class="name">GLPWeights</span></a><span class="result"> extends <a href="../optimize/Weights.html" class="extype" name="org.mitre.mandolin.optimize.Weights">Weights</a>[<a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">GLP weights implements Mandolin Weight class, just wraps GLPLayout</p>
+    </li><li name="org.mitre.mandolin.glp.GlpLocalBatchEvaluator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GlpLocalBatchEvaluatorextendsBatchEvaluator[org.mitre.mandolin.glp.GLPFactor,org.mitre.mandolin.glp.GLPWeights,org.mitre.mandolin.glp.GLPLossGradient]"></a>
+      <a id="GlpLocalBatchEvaluator:GlpLocalBatchEvaluator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GlpLocalBatchEvaluator.html"><span class="name">GlpLocalBatchEvaluator</span></a><span class="result"> extends <a href="../optimize/BatchEvaluator.html" class="extype" name="org.mitre.mandolin.optimize.BatchEvaluator">BatchEvaluator</a>[<a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>, <a href="GLPWeights.html" class="extype" name="org.mitre.mandolin.glp.GLPWeights">GLPWeights</a>, <a href="GLPLossGradient.html" class="extype" name="org.mitre.mandolin.glp.GLPLossGradient">GLPLossGradient</a>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.GlpModel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GlpModelextendsDataFrames"></a>
+      <a id="GlpModel:GlpModel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GlpModel.html"><span class="name">GlpModel</span></a><span class="result"> extends <a href="DataFrames.html" class="extype" name="org.mitre.mandolin.glp.DataFrames">DataFrames</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.HingeLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HingeLTypeextendsLayerDesignatewithProductwithSerializable"></a>
+      <a id="HingeLType:HingeLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="HingeLType.html"><span class="name">HingeLType</span></a><span class="params">(<span name="c">c: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">1.0</span></span>)</span><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.HingeLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HingeLossextendsLossFunction"></a>
+      <a id="HingeLoss:HingeLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="HingeLoss.html"><span class="name">HingeLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Implements a multiclass Hinge Loss (cf.</p>
+    </li><li name="org.mitre.mandolin.glp.InputLayer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="InputLayerextendsLayer"></a>
+      <a id="InputLayer:InputLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="InputLayer.html"><span class="name">InputLayer</span></a><span class="result"> extends <a href="Layer.html" class="extype" name="org.mitre.mandolin.glp.Layer">Layer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.LType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LTypeextendsSerializablewithProduct"></a>
+      <a id="LType:LType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="LType.html"><span class="name">LType</span></a><span class="params">(<span name="designate">designate: <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a></span>, <span name="dim">dim: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="drO">drO: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.0</span></span>, <span name="l1">l1: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.0</span></span>, <span name="l2">l2: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.0</span></span>, <span name="maxNorm">maxNorm: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.0</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.Layer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LayerextendsSerializable"></a>
+      <a id="Layer:Layer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Layer.html"><span class="name">Layer</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.LayerDesignate" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LayerDesignateextendsSerializable"></a>
+      <a id="LayerDesignate:LayerDesignate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LayerDesignate.html"><span class="name">LayerDesignate</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.LocalProcessor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LocalProcessorextendsProcessor"></a>
+      <a id="LocalProcessor:LocalProcessor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalProcessor.html"><span class="name">LocalProcessor</span></a><span class="result"> extends <a href="Processor.html" class="extype" name="org.mitre.mandolin.glp.Processor">Processor</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.LossFunction" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LossFunctionextendsSerializable"></a>
+      <a id="LossFunction:LossFunction"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LossFunction.html"><span class="name">LossFunction</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">The loss function here captures both the output activation/link function but
+also captures the loss of the activated/linked output vs.</p>
+    </li><li name="org.mitre.mandolin.glp.ModifiedHuberLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ModifiedHuberLossextendsLossFunction"></a>
+      <a id="ModifiedHuberLoss:ModifiedHuberLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ModifiedHuberLoss.html"><span class="name">ModifiedHuberLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A modified Huber loss for classification; adapted for multiclass</p>
+    </li><li name="org.mitre.mandolin.glp.NesterovSgdSpec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NesterovSgdSpecextendsUpdaterSpecwithProductwithSerializable"></a>
+      <a id="NesterovSgdSpec:NesterovSgdSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NesterovSgdSpec.html"><span class="name">NesterovSgdSpec</span></a><span class="params">(<span name="learnRate">learnRate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.1</span></span>)</span><span class="result"> extends <a href="UpdaterSpec.html" class="extype" name="org.mitre.mandolin.glp.UpdaterSpec">UpdaterSpec</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.NonInputLayer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="NonInputLayerextendsLayerwithSerializable"></a>
+      <a id="NonInputLayer:NonInputLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NonInputLayer.html"><span class="name">NonInputLayer</span></a><span class="result"> extends <a href="Layer.html" class="extype" name="org.mitre.mandolin.glp.Layer">Layer</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A single layer in an MLP.</p>
+    </li><li name="org.mitre.mandolin.glp.Processor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProcessorextendsLineParser"></a>
+      <a id="Processor:Processor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Processor.html"><span class="name">Processor</span></a><span class="result"> extends <a href="../util/LineParser.html" class="extype" name="org.mitre.mandolin.util.LineParser">LineParser</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">General driver/processor class for GLP and linear models.</p>
+    </li><li name="org.mitre.mandolin.glp.RMSPropSpec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RMSPropSpecextendsUpdaterSpecwithProductwithSerializable"></a>
+      <a id="RMSPropSpec:RMSPropSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RMSPropSpec.html"><span class="name">RMSPropSpec</span></a><span class="params">(<span name="learnRate">learnRate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.001</span></span>)</span><span class="result"> extends <a href="UpdaterSpec.html" class="extype" name="org.mitre.mandolin.glp.UpdaterSpec">UpdaterSpec</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.RampLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RampLTypeextendsLayerDesignatewithProductwithSerializable"></a>
+      <a id="RampLType:RampLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RampLType.html"><span class="name">RampLType</span></a><span class="params">(<span name="rl">rl: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">2.0</span></span>)</span><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.RampLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RampLossextendsLossFunction"></a>
+      <a id="RampLoss:RampLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="RampLoss.html"><span class="name">RampLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A ramp loss function assigns a linear penalty outside the margin (1.</p>
+    </li><li name="org.mitre.mandolin.glp.Regularizer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RegularizerextendsAnyRef"></a>
+      <a id="Regularizer:Regularizer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Regularizer.html"><span class="name">Regularizer</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SgdSpec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SgdSpecextendsUpdaterSpecwithProductwithSerializable"></a>
+      <a id="SgdSpec:SgdSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SgdSpec.html"><span class="name">SgdSpec</span></a><span class="params">(<span name="learnRate">learnRate: <span class="extype" name="scala.Double">Double</span> = <span class="symbol">0.1</span></span>)</span><span class="result"> extends <a href="UpdaterSpec.html" class="extype" name="org.mitre.mandolin.glp.UpdaterSpec">UpdaterSpec</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SoftMaxLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SoftMaxLossextendsLossFunction"></a>
+      <a id="SoftMaxLoss:SoftMaxLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SoftMaxLoss.html"><span class="name">SoftMaxLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Standard softmax layer with standard cross-entropy loss</p>
+    </li><li name="org.mitre.mandolin.glp.SparseGLPFactor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SparseGLPFactorextendsGLPFactorwithSerializable"></a>
+      <a id="SparseGLPFactor:SparseGLPFactor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SparseGLPFactor.html"><span class="name">SparseGLPFactor</span></a><span class="result"> extends <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SparseGradientWeightLayer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SparseGradientWeightLayerextendsAbstractWeightLayer"></a>
+      <a id="SparseGradientWeightLayer:SparseGradientWeightLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SparseGradientWeightLayer.html"><span class="name">SparseGradientWeightLayer</span></a><span class="result"> extends <a href="AbstractWeightLayer.html" class="extype" name="org.mitre.mandolin.glp.AbstractWeightLayer">AbstractWeightLayer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SparseInputLayer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SparseInputLayerextendsInputLayer"></a>
+      <a id="SparseInputLayer:SparseInputLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SparseInputLayer.html"><span class="name">SparseInputLayer</span></a><span class="result"> extends <a href="InputLayer.html" class="extype" name="org.mitre.mandolin.glp.InputLayer">InputLayer</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SparseToDenseReader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SparseToDenseReaderextendsSerializable"></a>
+      <a id="SparseToDenseReader:SparseToDenseReader"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SparseToDenseReader.html"><span class="name">SparseToDenseReader</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Reader that maps a sparse input representation to a <code>DenseVec</code>
+where the feature indices for each feature have already been computed.</p>
+    </li><li name="org.mitre.mandolin.glp.SparseVecFeatureExtractor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SparseVecFeatureExtractorextendsFeatureExtractor[String,org.mitre.mandolin.glp.GLPFactor]withLineParserwithSerializable"></a>
+      <a id="SparseVecFeatureExtractor:SparseVecFeatureExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SparseVecFeatureExtractor.html"><span class="name">SparseVecFeatureExtractor</span></a><span class="result"> extends <a href="../transform/FeatureExtractor.html" class="extype" name="org.mitre.mandolin.transform.FeatureExtractor">FeatureExtractor</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>] with <a href="../util/LineParser.html" class="extype" name="org.mitre.mandolin.util.LineParser">LineParser</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Maps input lines in a sparse-vector format <code><label> <f1>:<val> <f2>:<val> ... `
+to a ''sparse'' vector input. This is most efficient if the inputs have high dimensionality
+and are sparse.</code></p>
+    </li><li name="org.mitre.mandolin.glp.SquaredErrorLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SquaredErrorLossextendsLossFunction"></a>
+      <a id="SquaredErrorLoss:SquaredErrorLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SquaredErrorLoss.html"><span class="name">SquaredErrorLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Squared error loss with linear activations</p>
+    </li><li name="org.mitre.mandolin.glp.StdGLPFactor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StdGLPFactorextendsGLPFactorwithSerializable"></a>
+      <a id="StdGLPFactor:StdGLPFactor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StdGLPFactor.html"><span class="name">StdGLPFactor</span></a><span class="result"> extends <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.StdVectorExtractorWithAlphabet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StdVectorExtractorWithAlphabetextendsFeatureExtractor[String,org.mitre.mandolin.glp.GLPFactor]withSerializable"></a>
+      <a id="StdVectorExtractorWithAlphabet:StdVectorExtractorWithAlphabet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StdVectorExtractorWithAlphabet.html"><span class="name">StdVectorExtractorWithAlphabet</span></a><span class="result"> extends <a href="../transform/FeatureExtractor.html" class="extype" name="org.mitre.mandolin.transform.FeatureExtractor">FeatureExtractor</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>] with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extractor that constructs <code>DenseVec</code> dense vectors from an
+input sparse representation where the feature indices for each feature have already been computed.</p>
+    </li><li name="org.mitre.mandolin.glp.TLogisticLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TLogisticLossextendsLossFunction"></a>
+      <a id="TLogisticLoss:TLogisticLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TLogisticLoss.html"><span class="name">TLogisticLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A smooth non-convex family of loss functions.</p>
+    </li><li name="org.mitre.mandolin.glp.TransLogLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TransLogLossextendsLossFunction"></a>
+      <a id="TransLogLoss:TransLogLoss"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TransLogLoss.html"><span class="name">TransLogLoss</span></a><span class="result"> extends <a href="LossFunction.html" class="extype" name="org.mitre.mandolin.glp.LossFunction">LossFunction</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Special case of T-logistic loss; with multiclass extensions</p>
+    </li><li name="org.mitre.mandolin.glp.UpdaterSpec" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UpdaterSpecextendsAnyRef"></a>
+      <a id="UpdaterSpec:UpdaterSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="UpdaterSpec.html"><span class="name">UpdaterSpec</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.VecFeatureExtractor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="VecFeatureExtractorextendsFeatureExtractor[String,org.mitre.mandolin.glp.GLPFactor]withLineParserwithSerializable"></a>
+      <a id="VecFeatureExtractor:VecFeatureExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="VecFeatureExtractor.html"><span class="name">VecFeatureExtractor</span></a><span class="result"> extends <a href="../transform/FeatureExtractor.html" class="extype" name="org.mitre.mandolin.transform.FeatureExtractor">FeatureExtractor</a>[<span class="extype" name="scala.Predef.String">String</span>, <a href="GLPFactor.html" class="extype" name="org.mitre.mandolin.glp.GLPFactor">GLPFactor</a>] with <a href="../util/LineParser.html" class="extype" name="org.mitre.mandolin.util.LineParser">LineParser</a> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Maps input lines in a sparse-vector format <code><label> <f1>:<val> <f2>:<val> ... `
+to a dense vector input. This is most efficient if the inputs aren't ''too'' sparse
+and the dimensionality isn't too great.</code></p>
+    </li><li name="org.mitre.mandolin.glp.WeightLayer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WeightLayerextendsAbstractWeightLayer"></a>
+      <a id="WeightLayer:WeightLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WeightLayer.html"><span class="name">WeightLayer</span></a><span class="result"> extends <a href="AbstractWeightLayer.html" class="extype" name="org.mitre.mandolin.glp.AbstractWeightLayer">AbstractWeightLayer</a></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.mitre.mandolin.glp.ANNetwork" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ANNetwork"></a>
+      <a id="ANNetwork:ANNetwork"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ANNetwork$.html"><span class="name">ANNetwork</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Builds an ANN from a list of layer specification/types</p>
+    </li><li name="org.mitre.mandolin.glp.AdaDeltaSpec" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AdaDeltaSpec"></a>
+      <a id="AdaDeltaSpec:AdaDeltaSpec"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AdaDeltaSpec$.html"><span class="name">AdaDeltaSpec</span></a><span class="result"> extends <a href="UpdaterSpec.html" class="extype" name="org.mitre.mandolin.glp.UpdaterSpec">UpdaterSpec</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.Average" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Average"></a>
+      <a id="Average:Average"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Average$.html"><span class="name">Average</span></a><span class="result"> extends <a href="ComposeStrategy.html" class="extype" name="org.mitre.mandolin.glp.ComposeStrategy">ComposeStrategy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.Classifier" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Classifier"></a>
+      <a id="Classifier:Classifier"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Classifier$.html"><span class="name">Classifier</span></a><span class="result"> extends <a href="../app/AppMain.html" class="extype" name="org.mitre.mandolin.app.AppMain">AppMain</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.CrossEntropyLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CrossEntropyLType"></a>
+      <a id="CrossEntropyLType:CrossEntropyLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CrossEntropyLType$.html"><span class="name">CrossEntropyLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.DenseVectorWriter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DenseVectorWriter"></a>
+      <a id="DenseVectorWriter:DenseVectorWriter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DenseVectorWriter$.html"><span class="name">DenseVectorWriter</span></a><span class="result"> extends <a href="../app/AppMain.html" class="extype" name="org.mitre.mandolin.app.AppMain">AppMain</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A separate utility program that takes inputs in a Sparse vector representation
+and maps them to a tab-separate file dense representation with the feature
+names (in the sparse vector input file) as column headers.</p>
+    </li><li name="org.mitre.mandolin.glp.GLPLayout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPLayout"></a>
+      <a id="GLPLayout:GLPLayout"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPLayout$.html"><span class="name">GLPLayout</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">GLPLayout objects are constructed using this factory object</p>
+    </li><li name="org.mitre.mandolin.glp.GLPOptimizer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GLPOptimizer"></a>
+      <a id="GLPOptimizer:GLPOptimizer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GLPOptimizer$.html"><span class="name">GLPOptimizer</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li><li name="org.mitre.mandolin.glp.InputLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InputLType"></a>
+      <a id="InputLType:InputLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="InputLType$.html"><span class="name">InputLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.LinearLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LinearLType"></a>
+      <a id="LinearLType:LinearLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LinearLType$.html"><span class="name">LinearLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.LogisticLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LogisticLType"></a>
+      <a id="LogisticLType:LogisticLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LogisticLType$.html"><span class="name">LogisticLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.Maximum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Maximum"></a>
+      <a id="Maximum:Maximum"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Maximum$.html"><span class="name">Maximum</span></a><span class="result"> extends <a href="ComposeStrategy.html" class="extype" name="org.mitre.mandolin.glp.ComposeStrategy">ComposeStrategy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.Minimum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Minimum"></a>
+      <a id="Minimum:Minimum"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Minimum$.html"><span class="name">Minimum</span></a><span class="result"> extends <a href="ComposeStrategy.html" class="extype" name="org.mitre.mandolin.glp.ComposeStrategy">ComposeStrategy</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.ModHuberLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ModHuberLType"></a>
+      <a id="ModHuberLType:ModHuberLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ModHuberLType$.html"><span class="name">ModHuberLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.ReluLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReluLType"></a>
+      <a id="ReluLType:ReluLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ReluLType$.html"><span class="name">ReluLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SoftMaxLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SoftMaxLType"></a>
+      <a id="SoftMaxLType:SoftMaxLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SoftMaxLType$.html"><span class="name">SoftMaxLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.SparseInputLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SparseInputLType"></a>
+      <a id="SparseInputLType:SparseInputLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SparseInputLType$.html"><span class="name">SparseInputLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.TLogisticLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TLogisticLType"></a>
+      <a id="TLogisticLType:TLogisticLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TLogisticLType$.html"><span class="name">TLogisticLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.TanHLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TanHLType"></a>
+      <a id="TanHLType:TanHLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TanHLType$.html"><span class="name">TanHLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.TransLogLType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TransLogLType"></a>
+      <a id="TransLogLType:TransLogLType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="TransLogLType$.html"><span class="name">TransLogLType</span></a><span class="result"> extends <a href="LayerDesignate.html" class="extype" name="org.mitre.mandolin.glp.LayerDesignate">LayerDesignate</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.glp.WeightLayer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WeightLayer"></a>
+      <a id="WeightLayer:WeightLayer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WeightLayer$.html"><span class="name">WeightLayer</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>

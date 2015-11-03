@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+
+    <title>Mandolin</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mandolin" />
+    <meta name="keywords" content="machine learning, distributed" />
+
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- 
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/docs.css" rel="stylesheet">
+    -->
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+  </head>
+  
+  <div id="container">
+  <div id="header"> 
+    <h1 id="logo-text">Mandolin</h1>
+  </div>
+  <div id="site-content">
+  <div id="col-left">    
+  <p id="top">
+     
+     <h1 id="generalized-layered-perceptron" class="title">Generalized Layered Perceptron</h1>
+     <p>Mandolin provides a rich means to specify a wide variety of models referred to here
+     as <em>Generalized Layered Perceptrons</em> (GLPs). These models are just multilayer
+     perceptrons (fully connected feedforward models), but Mandolin provides many loss functions,
+     activation functions and forms of regularization.<br>
+     Linear models are simply a special case (without any 
+     hidden nodes), but Mandolin includes sparse data representations and optimizations to 
+     make learning very large linear models efficient.</p>
+     <p>Mandolin&#39;s configuration system lets users easily fine-tune the configuration of GLPs 
+     as well as to specify various details for how to optimize the loss function of the GLP 
+     within a distributed computing environment. The configuration system allows this to
+     be done without writing code.  This may be useful for experimentation with static
+     datasets, but in some cases, a GLP might be the basis of an analytic embedded within
+     a larger workflow.  Mandolin follows the approach of MLLib by providing an API
+     that allows for the development of arbitrary workflows; more specifically, it allows
+     for </p>
+     <ul>
+       <li>Datasets to be provided to Mandolin as Spark 
+       <a href="http://spark.apache.org/docs/latest/sql-programming-guide.html#dataframes">DataFrames</a>, </li>
+       <li>Construction of distributed stochastic gradient descent updaters (e.g. AdaGrad)</li>
+       <li>Specification of GLPs (including loss functions and network topology)</li>
+       <li>Training GLPs - i.e. estimating model parameters</li>
+       <li>Using trained GLPs to make predictions</li>
+     </ul>
+     <p>The API is in its early stages and provides basic interoperability with Apache Spark&#39;s
+     MLLib <strong>spark.ml</strong> API.</p>
+     <p>Building upon the MNIST example earlier, the following steps outline how to load
+     in a dataset as a Spark DataFrame, train a model and evaluate it against
+     a held out test set.  The API here is found in the package <code>org.mitre.mandolin.ml</code>
+     and extends the <code>spark.ml</code> API.  It requires data in a spark DataFrame conforming
+     to the spark.ml schema for representing datasets for use within MLlib. </p>
+     <p>To run this example, start-up a Spark Shell instance (or embedd within an application).
+     Ensure that Kryo serialization is used and any other Spark configuration options
+     relevant to your cluster/environment.  For example, to start the shell with a &quot;local&quot;
+     master, from the mandolin/examples/mnist directory execute:</p>
+     <pre><code>$SPARK_HOME/bin/spark-shell \
+--conf spark.serializer=org.apache.spark.serializer.KryoSerializer \
+--conf spark.kryo.registrator=org.mitre.mandolin.config.MandolinKryoRegistrator \
+--master &quot;local[16]&quot; \
+--jars ../../scala-2.11.7/mandolin-assembly-0.3.0-SNAPSHOT_2.11.7.jar
+</code></pre>
+     <p>Once the shell has been started, the following code can be executed to load data, train a
+     model, use it for prediction and evaluate:</p>
+     <pre><code>import org.mitre.mandolin.ml._
+import org.mitre.mandolin.glp._
+
+val glp = new GlpModel // Mandolin class for general GLP model
+val glpClassifier = new GLPClassifier(sc, glp) // GLP using spark.ml API
+
+// configure network topology
+glpClassifier.setLayerSpec(IndexedSeq(LType(InputLType), LType(SoftMaxLType)))
+
+// read in the data to a spark DataFrame assuming Mandolin input format
+// This has a schema with just two columns: (label, features)
+// The label is a 0-based double/int denoting the category
+// the features column is a Spark feature vector org.apache.spark.mllib.linalg.Vector
+val df = glp.readAsDataFrame(sqlContext, sc, &quot;mnist.10k&quot;, 784, 10)
+
+// Split the data into a training and test set
+val data = df.randomSplit(Array(0.8,0.2))
+val tr = data(0)
+val tst = data(1)
+
+// Fit the model with the training data
+val glpClassifierModel = glpClassifier.fit(tr)
+
+// Gather predictions and evaluate the model
+// this adds a &#39;prediction&#39; column to the dataframe
+val result = glpClassifierModel.transform(tst)
+
+// Get predictions and labels and evaluate using `spark.ml.evaluation` components
+val predictionAndLabels = result.select(&quot;prediction&quot;,&quot;label&quot;)
+val evaluator = new org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator()
+println(&quot;F1: &quot; + evaluator.evaluate(predictionAndLabels))</code></pre>
+     <p>See the <a href="http://spark.apache.org/docs/latest/ml-guide.html">spark.ml</a> programming guide
+     for additional examples of evaluating models, using models in more complex pipelines,
+     use within ensembles, cross validation and model selection.</p>
+     <p>The documentation below is <strong>In rough form, needs to be reworked</strong>
+     It should include how to do the above without using <code>spark.ml</code> and using
+     Mandolin &quot;native&quot; capabilities.</p>
+     <p>The following example assumes Mandolin has been launched as part of the
+     Spark Shell:</p>
+     <pre><code>import org.mitre.mandolin.glp._
+val glp = new GlpModel
+val df = glp.readAsDataFrame(sqlContext, sc, &quot;mnist.10k&quot;, 784, 10)
+val data = df.randomSplit(Array(0.8,0.2))
+val trData = data(0)
+val tstData = data(1)
+val layerSpec = IndexedSeq(LType(InputLType), LType(SoftMaxLType)) // linear model
+val model = glp.estimate(sc, trData, layerSpec)
+
+// evaluate model and return a confusion object with eval metrics
+val confusion = glp.evaluate(sc, model, tstData)
+print(&quot;Area under ROC: &quot; + confusion.getTotalAreaUnderROC())
+
+// pretty print the confusion matrix when applying the learned model to the test data
+confusion.getMatrix.prettyPrint
+</code></pre>
+     <p>If we now want to train this with a hidden layer, using 300 nodes with a hyperbolic tangent
+     activation function, we would adjust the model spec as in the following:</p>
+     <pre><code>import org.mitre.mandolin.glp._
+val glp = new GlpModel
+val df = glp.readAsDataFrame(sqlContext, sc, &quot;mnist.10k&quot;, 784, 10)
+val data = df.randomSplit(Array(0.8,0.2))
+val trData = data(0)
+val tstData = data(1)
+val mspec = IndexedSeq(LType(InputLType), 
+                       LType(TanHLType, 300), 
+                       LType(SoftMaxLType))
+val model = glp.estimate(sc, trData, mspec)
+val confusion = glp.evaluate(sc, model, tstData)</code></pre>
+     <p>The <code>estimate</code> method uses stochastic gradient descent to optimize the loss function
+     as defined by the model specification <code>mspec</code>. The default method is <strong>AdaGrad</strong>, which works
+     well for linear models. Because learning rates can only decrease with AdaGrad, other
+     adaptive learning rate schemes, such as <strong>RMSProp</strong>, often work better with deep, nonlinear
+     models having non-convex loss functions.  Alternative parameter updating schemes can be specified
+     and passed into the <code>estimate</code> method:</p>
+     <pre><code>val mspec = IndexedSeq(LType(InputLType), 
+                       LType(TanHLType, 300), 
+                       LType(SoftMaxLType))
+val model = glp.estimate(sc, trData, mspec, RMSPropSpec(0.001))
+val confMat = glp.evaluate(sc, model, tstData)</code></pre>
+     <p>Note that each <code>LType</code> object that describes a layer can provide all the options described
+     in the <a href="configuration.html">Configuration</a> section, including dropout, regularization and various loss functions
+     as different types of output layers.  For example, a deeper model that uses rectified linear
+     activations in the hidden layer with dropout and L1 regularization could be specified as:</p>
+     <pre><code>import org.mitre.mandolin.glp._
+// ...
+val mspec = IndexedSeq(LType(InputLType), 
+                       LType(ReluLType, 500, drO=0.5, l1=0.0001), 
+                       LType(ReluLType, 700, drO=0.5, l1=0.0001),
+                       LType(ReluLType, 500, drO=0.5, l1=0.0001),
+                       LType(SoftMaxLType, l1=0.0001))
+val model = glp.estimate(sc, trData, mspec, RMSPropSpec(0.001))
+val confMat = glp.evaluate(sc, model, tstData)</code></pre>      
+  </p>
+  </div>
+
+  <div id="col-right">
+    <!-- <div style="padding: 30px 10px 10px;">  -->
+      <ul>
+       <div class="toc">
+         <ul>
+           <li>
+             <p class="toc level1">Overview</p>
+             <ul>
+               <li><a class="toc level2" href="../overview/intro.html">Introduction</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Users Guide</p>
+             <ul>
+               <li><a class="toc level2" href="installation.html">Installation</a></li>
+               <li><a class="toc level2" href="quick-start.html">Quickstart</a></li>
+               <li><a class="toc level2" href="formats.html">Formats</a></li>
+               <li><a class="toc level2" href="configuration.html">Configuration</a></li>
+               <li><span class="toc level2 active">Generalized Layered Perceptron</span></li>
+               <li><a class="toc level2" href="specification.html">Model Specification</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Quick-start Without Spark</p>
+             <ul>
+               <li><a class="toc level2" href="../without-spark-quickstart/linear-classifier.html">Linear Classifier</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Developer Docs</p>
+             <ul>
+               <li><a class="toc level2" href="../api-docs/api.html">API Docs</a></li>
+             </ul>
+           </li>
+           <li>
+             <p class="toc level1">Runtime Decoder</p>
+             <ul>
+               <li><a class="toc level2" href="../runtime-decoder/runtime-decoder.html">Runtime Decoder</a></li>
+             </ul>
+           </li>
+         </ul>
+       </div>
+      </ul>
+    </div>
+  </div>
+
+
+
+  </div>
+
+
+</body></html>

@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>config - org.mitre.mandolin.config</title>
+          <meta name="description" content="config - org.mitre.mandolin.config" />
+          <meta name="keywords" content="config org.mitre.mandolin.config" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.mitre.mandolin.config.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.mitre">mitre</a>.<a href="../package.html" class="extype" name="org.mitre.mandolin">mandolin</a></p>
+        <h1>config</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">config</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><h4> Configuration Overview </h4><p>Provides utility classes for handling configurations. Configurations
+are handled through the <a href="https://github.com/typesafehub/config" target="_blank">Typesafe Config</a>
+library. The class <a href="ConfigGeneratedCommandOptions.html" class="extype" name="org.mitre.mandolin.config.ConfigGeneratedCommandOptions">org.mitre.mandolin.config.ConfigGeneratedCommandOptions</a> constructs
+a set of command-line options that are generated from the current set of
+config paths (i.e. keys). This allows each config option to be set in a configuration
+file or via command-line option.  Note that Mandolin library and application settings are provided
+in <code>src/main/resources/reference.conf</code> and <code>src/main/resources/application.conf</code>.
+Applications may provide a runtime configuration file to override these values via the <code>--conf</code>
+command-line option.  Full details on all the options can be found by looking at these configuration
+files and the comments therein.  A few specific configuration options are worth mentioning here:</p><h5> Logging Configuration </h5><p>One complication has to due with logging.  The current Mandolin configuration provides three
+ways to reconfigure logging. By default, logging is controlled in the log4j.properties file on the path
+(default at src/main/resources/log4j.properties). All logging is directed to the console and to a file
+<code>mandolin.log</code> in the current application root/launch directory. The output file can be overridden via
+the <code>mandolin.log-file</code> config path either in the provided configuration file or via command-line. The
+logging level (for all loggers) can be overridden via <code>mandolin.log-level</code>.  For full control over
+the logging, the application should define a separate log4j.properties file and provide this
+via configuration or command-line at the path <code>mandolin.log-config-file</code>.</p><h5> Help and Configuration Display </h5><p>Two final useful command-line options are <code>--X-display</code> which will print out the JSON/HOCON object
+with all the current config paths and values (along with comments) and <code>--help</code> which prints out
+the list of command-line options to override these further at the command-line.</p><h5> Kryo class registration </h5><p>Classes that need to be registered for Kryo serialization are held within the MandolinKryoRegistrator package.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.mitre.mandolin.config"><span>config</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.mitre.mandolin.config.AppSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AppSettingsextendsGeneralSettings"></a>
+      <a id="AppSettings:AppSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AppSettings.html"><span class="name">AppSettings</span></a><span class="result"> extends <a href="GeneralSettings.html" class="extype" name="org.mitre.mandolin.config.GeneralSettings">GeneralSettings</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Mandolin application settings</p>
+    </li><li name="org.mitre.mandolin.config.BatchLearnerSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BatchLearnerSettingsextendsLearnerSettings"></a>
+      <a id="BatchLearnerSettings:BatchLearnerSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BatchLearnerSettings.html"><span class="name">BatchLearnerSettings</span></a><span class="result"> extends <a href="LearnerSettings.html" class="extype" name="org.mitre.mandolin.config.LearnerSettings">LearnerSettings</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.config.ConfigGeneratedCommandOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ConfigGeneratedCommandOptionsextendsScallopConf"></a>
+      <a id="ConfigGeneratedCommandOptions:ConfigGeneratedCommandOptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ConfigGeneratedCommandOptions.html"><span class="name">ConfigGeneratedCommandOptions</span></a><span class="result"> extends <span class="extype" name="org.rogach.scallop.ScallopConf">ScallopConf</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Takes a sequence of arguments from the command line and adds to the default configuration
+object constructed from the src/main/resources/reference.</p>
+    </li><li name="org.mitre.mandolin.config.DecoderSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DecoderSettingsextendsAppSettings"></a>
+      <a id="DecoderSettings:DecoderSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DecoderSettings.html"><span class="name">DecoderSettings</span></a><span class="result"> extends <a href="AppSettings.html" class="extype" name="org.mitre.mandolin.config.AppSettings">AppSettings</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Settings for all Mandolin decoders</p>
+    </li><li name="org.mitre.mandolin.config.DeepNetSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DeepNetSettingsextendsLearnerSettings"></a>
+      <a id="DeepNetSettings:DeepNetSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DeepNetSettings.html"><span class="name">DeepNetSettings</span></a><span class="result"> extends <a href="LearnerSettings.html" class="extype" name="org.mitre.mandolin.config.LearnerSettings">LearnerSettings</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.mitre.mandolin.config.GeneralSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GeneralSettingsextendsAnyRef"></a>
+      <a id="GeneralSettings:GeneralSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GeneralSettings.html"><span class="name">GeneralSettings</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This top-level abstract class holds general Spark configuration
+settings not specific to any particular type of Mandolin application.</p>
+    </li><li name="org.mitre.mandolin.config.LearnerSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="LearnerSettingsextendsAppSettings"></a>
+      <a id="LearnerSettings:LearnerSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LearnerSettings.html"><span class="name">LearnerSettings</span></a><span class="result"> extends <a href="AppSettings.html" class="extype" name="org.mitre.mandolin.config.AppSettings">AppSettings</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Settings specific to all Mandolin learners</p>
+    </li><li name="org.mitre.mandolin.config.MandolinKryoRegistrator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MandolinKryoRegistratorextendsKryoRegistrator"></a>
+      <a id="MandolinKryoRegistrator:MandolinKryoRegistrator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MandolinKryoRegistrator.html"><span class="name">MandolinKryoRegistrator</span></a><span class="result"> extends <span class="extype" name="org.apache.spark.serializer.KryoRegistrator">KryoRegistrator</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Provides and registers a set of classes that will be serialized/deserialized
+using Kryo for use within Spark.</p>
+    </li><li name="org.mitre.mandolin.config.OnlineLearnerSettings" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="OnlineLearnerSettingsextendsLearnerSettings"></a>
+      <a id="OnlineLearnerSettings:OnlineLearnerSettings"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="OnlineLearnerSettings.html"><span class="name">OnlineLearnerSettings</span></a><span class="result"> extends <a href="LearnerSettings.html" class="extype" name="org.mitre.mandolin.config.LearnerSettings">LearnerSettings</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Online learning-specific settings
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.mitre.mandolin.config.AppConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AppConfig"></a>
+      <a id="AppConfig:AppConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="AppConfig$.html"><span class="name">AppConfig</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt"></p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>
